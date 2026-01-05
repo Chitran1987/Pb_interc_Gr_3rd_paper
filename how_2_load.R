@@ -1,0 +1,5 @@
+rm(list=ls())
+load(file = 'STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda')
+load(file = 'FFT_map_STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda')
+plot2D.arr(img.tens)
+plot2D.arr(map.img.tens)
