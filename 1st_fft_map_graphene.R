@@ -44,3 +44,4 @@ plot2D.zoom(f.dmp, center = c(0,0), Del_X = 80, Del_Y = 80)
 
 ####Call the fft_2D_map function
 map.gr.img.tens <- fft_2D_map(img.tens = img.tens, DelX = 1, DelY = 1, k1st = b.mat, k0 = k0.vec)
+save(map.gr.img.tens, file = 'FFT_map_gr_STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda')
