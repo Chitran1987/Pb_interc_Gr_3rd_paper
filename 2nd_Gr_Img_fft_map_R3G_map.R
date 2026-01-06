@@ -31,7 +31,7 @@ dmp <- plot2D.boxes(f_im.gr.sm, box.mat = b.mat, box.thick = 0.01, box_intens = 
 
 ##Check the DelX and DelY ranges
 plot2D.arr(img.gr.sm)
-dmp <- plot2D.win.sig(img.gr.sm, center = c(2.5, 3.5), k=10, Xspan = 1.5, Yspan = 1.5)
+dmp <- plot2D.win.sig(img.gr.sm, center = c(2.5, 3.75), k=10, Xspan = 1.5, Yspan = 1.5)
 f.dmp <- fft_2D(dmp, pl = 'amp')
 f.dmp <- f.dmp[[1]]
 f.dmp <- plot2D.zoom(f.dmp, center = c(0,0), Del_X = 100, Del_Y = 100)
