@@ -38,3 +38,4 @@ dmp <- plot2D.zoom(f_dmp, center = c(0,0), Del_X = 80, Del_Y = 80)
 
 #Now run the mapping algorithm
 map.img.gr.sm <- fft_2D_map(img.tens = img.gr.sm, DelX = 1.5, DelY = 1.5, k1st = b.mat, k0=z.box)
+save(map.img.gr.sm, file = 'FFT_map_STM_img_Jan24_14.50.13_2023_[6-6]_70mV_100pA.rda')
