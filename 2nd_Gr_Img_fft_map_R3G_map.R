@@ -41,7 +41,7 @@ f.dmp <- plot2D.zoom(f.dmp, center = c(0,0), Del_X = 100, Del_Y = 100)
 
 ##Call the map function
 map.img.gr.sm_R3G <- fft_2D_map(img.tens = img.gr.sm, DelX = 1.5, DelY = 1.5, k1st = b.mat, k0 = z.vec)
-
+save(map.img.gr.sm_R3G, file = 'FFT_map_R3G_STM_img_Jan24_14.50.13_2023_[6-6]_70mV_100pA.rda')
 
 
 
