@@ -33,3 +33,4 @@ dmp <- fft_2D(dmp, pl='amp')
 
 #Call the map
 map.img.R3G.sm <- fft_2D_map(img.tens = latt, DelX = 1, DelY = 1, k1st = b.mat, k0 = v)
+save(map.img.R3G.sm, file = 'FFT_map_STM_img_Jan24_15.18.12_2023_[6-8]_10mV_100pA.rda')
