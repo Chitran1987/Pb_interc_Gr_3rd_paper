@@ -31,7 +31,7 @@ plot2D.arr(arr = f_img.large)
 dmp <- plot2D.boxes(img.tens = f_img.large, box.mat = b.mat, box.thick = 0.01, box_intens = 0.05)
 
 ###Build the k0 vector for the (0,0) spots
-vec.zer <- c(-0.75, -0.75, 0.75, 0.75 )
+vec.zer <- c(-7.5, -7.5, 7.5, 7.5 )
 zer.vec <- matrix(data = vec.zer, ncol = 4, byrow = T)
 dmp <- plot2D.boxes(img.tens = f_img.large, box.mat = zer.vec, box.thick = 0.01, box_intens = 0.1)
 k0.vec <- vec.zer
@@ -42,6 +42,7 @@ dmp <- plot2D.win.sig(tens = img.large, center=c(11, 10), Xspan = 1, Yspan = 1, 
 f.dmp <- fft_2D(tens = dmp, pl='amp')
 f.dmp <- plot2D.zoom(f.dmp[[1]], center = c(0,0), Del_X = 60, Del_Y = 60)
 f.dmp <- mask.arr.box(tens = f.dmp, box.vec = c(-7.5,-7.5,7.5,7.5))
+dmp <- plot2D.boxes(img.tens = f.dmp, box.mat = b.mat, box.thick = 0.01, box_intens = 0.1)
 
 ###Call the fft_2D_map() function
 map.img.large <- fft_2D_map(img.tens = img.large, DelX = 1, DelY = 1, k1st = b.mat, k0 = k0.vec)
