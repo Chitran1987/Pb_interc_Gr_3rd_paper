@@ -40,3 +40,4 @@ dmp <- plot2D.boxes(img.tens = f.dmp, box.mat = b.mat, box.thick = 0.01, box_int
 
 ###Call the fft_2D_map() function
 map.img.large.gr <- fft_2D_map(img.tens = img.large, DelX = 1, DelY = 1, k1st = b.mat, k0 = v)
+save(map.img.large.gr, file = 'FFT_map_gr_STM_img_Tue_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda' )
