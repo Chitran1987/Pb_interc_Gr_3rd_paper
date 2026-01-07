@@ -1,3 +1,6 @@
+#This script simply maps WHATEVER graphene spots are visible on the 'img.tens' file
+#The 'img.tens' is an STM image procured at 1.0V, 100pA
+#The 'img.tens' was mostly used to focus on the Pb(1X1) reconstruction lattice w.r.t the SiC
 rm(list=ls())
 library(StatsChitran)
 library(ImageMetrologyAnalysis)
