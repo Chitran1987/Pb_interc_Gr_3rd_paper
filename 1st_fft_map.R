@@ -12,12 +12,12 @@ vec2 <- c(5, 15, 16, 26, -16, -26, -5, -15)
 vec3 <- c(6.5, -25, 17.5, -14, -15, 15, -4, 26)
 box.mat <- matrix(data = c(vec1, vec2, vec3), ncol = 4, byrow = T)
 plot2D.arr(f_img)
-dmp <- plot2D.boxes(img.tens = f_img, box.mat = box.mat, box.thick = 0.01, box_intens = 0.02)
+dmp <- plot2D.boxes(img.tens = f_img, box.mat = box.mat, box.thick = 0.01, box_intens = 0.05)
 
 ###Determine the box co-ordinates for the (0,0) spot
 box.zer <- matrix(data = c(-2.5,-2.5,2.5,2.5), ncol = 4, byrow = T)
 plot2D.arr(f_img)
-dmp1 <- plot2D.boxes(img.tens = f_img, box.mat = box.zer, box.thick = 0.01, box_intens = 0.02)
+dmp1 <- plot2D.boxes(img.tens = f_img, box.mat = box.zer, box.thick = 0.01, box_intens = 0.05)
 k0.vec <- c(-2.5, -2.5, 2.5, 2.5)
 
 ###Determine the DelX and DelY for the fft_2D_map() function

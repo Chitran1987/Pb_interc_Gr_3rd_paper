@@ -6,15 +6,26 @@ library(ImageMetrologyAnalysis)
 img.large <- img_2_arr(source.png = "m1_Z RetraceUp Tue Jan 24 13.23.39 2023 [5-1]_1.0V_100pA.png", x.lim = c(0, 19.091), y.lim = c(0, 19.091))
 save(img.large, file = "STM_img_Tue_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda")
 
+
 ###Convert image to fft and visualize
 f_img.large <- fft_2D(tens = img.large, pl = 'amp')
 f_img.large <- f_img.large[[1]]
-f_img.large <- plot2D.zoom(arr = f_img.large, center = c(0,0), Del_X = 20, Del_Y = 20)
+f_img.large <- plot2D.zoom(arr = f_img.large, center = c(0,0), Del_X = 80, Del_Y = 80)
+
+###Take out the (0,0) spots
+##plot2D boxes around the (0,0) spots
+v <- c(-1,-1,1,1)
+v.mat <- matrix(data = v, ncol = 4, byrow = T)
+dmp <- plot2D.boxes(f_img.large, box.mat = v.mat, box_intens = 0.1, box.thick = 0.1)
+##mask out the box
+f_img.large <- mask.arr.box(tens = f_img.large, box.vec = v.mat)
+
 
 ###Build the box matrix around the SiC spots
-vec1 <- c(3.75, -1.5, 6.75, 1.5, -6.75, -1.5, -3.75, 1.5) ###For the horizontal spots
-vec2 <- c(1.5, 3.5, 4.5, 6.5, -4, 3.5, -1, 6.5)
-vec3 <- c(-4.5, -6.5, -1.5, -3.5, 0.75, -6.5, 3.75, -3.5)
+###Determine the box co-ordinates for the 1st order spots
+vec1 <- c(17, -7.5, 28, 3.5, -28, -3.5, -17, 7.5)
+vec2 <- c(5, 15, 16, 26, -16, -26, -5, -15)
+vec3 <- c(6.5, -25, 17.5, -14, -15, 15, -4, 26)
 b.mat <- matrix(data = c(vec1, vec2, vec3), ncol = 4, byrow = T)
 plot2D.arr(arr = f_img.large)
 dmp <- plot2D.boxes(img.tens = f_img.large, box.mat = b.mat, box.thick = 0.01, box_intens = 0.05)

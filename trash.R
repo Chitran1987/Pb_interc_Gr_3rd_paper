@@ -2,9 +2,31 @@ rm(list = ls())
 library(StatsChitran)
 library(ImageMetrologyAnalysis)
 
-load(file = 'FFT_map_gr_STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda')
-load(file = 'STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda')
+#####################################1st image#################################################
+load(file = 'FFT_map_gr_STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda') #Original Image
+load(file = 'STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda') #Graphene map (redo with fewer spots)
+load(file = 'FFT_map_STM_img_Jan_24_13.40.14_2023_[6-1]_1.0V_100pA.rda') #SiC map
+#####################################1st image#################################################
 
-#Plot the images to know
-plot2D.arr(arr = img.tens)
-plot2D.arr(arr = map.gr.img.tens)
+#####################################2nd image#################################################
+load(file = 'STM_img_Jan24_14.50.13_2023_[6-6]_70mV_100pA.rda') #Original Image
+load(file = 'FFT_map_STM_img_Jan24_14.50.13_2023_[6-6]_70mV_100pA.rda') #Graphene map
+load(file = 'FFT_map_R3G_STM_img_Jan24_14.50.13_2023_[6-6]_70mV_100pA.rda') #R3G map
+#####################################2nd image#################################################
+
+#####################################3rd image#################################################
+load(file='STM_img_Jan24_15.18.12_2023_[6-8]_10mV_100pA.rda') #Original Image
+load(file = 'FFT_map_STM_img_Jan24_15.18.12_2023_[6-8]_10mV_100pA.rda') #R3G map
+#####################################3rd image#################################################
+
+#####################################4th image (large image) #################################################
+load(file = "STM_img_Tue_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda") #Original image
+load(file = "FFT_map_STM_img_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda") #SiC map
+##Do a map of graphene and R3G if possible
+#####################################4th image (large image) #################################################
+
+
+#Plotting
+plot2D.arr(arr = map.img.large)
+
+
