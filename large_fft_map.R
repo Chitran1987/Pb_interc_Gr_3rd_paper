@@ -3,9 +3,8 @@ library(StatsChitran)
 library(ImageMetrologyAnalysis)
 
 ###Convert image to array
-img.large <- img_2_arr(source.png = "m1_Z RetraceUp Tue Jan 24 13.23.39 2023 [5-1]_1.0V_100pA.png", x.lim = c(0, 19.091), y.lim = c(0, 19.091))
-save(img.large, file = "STM_img_Tue_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda")
-
+load(file = "STM_img_Tue_Jan24_13.23.39_2023_[5-1]_1.0V_100pA.rda")
+plot2D.arr(img.large)
 
 ###Convert image to fft and visualize
 f_img.large <- fft_2D(tens = img.large, pl = 'amp')
