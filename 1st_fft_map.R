@@ -4,7 +4,10 @@ library(ImageMetrologyAnalysis)
 img.tens <- img_2_arr(source.png = "m1_Z RetraceUp Tue Jan 24 13.40.14 2023 [6-1]_1.0V_100pA.png", x.lim = c(0, 6.115), y.lim = c(0, 6.115), bgrnd = 0)
 f_img <- fft_2D(tens = img.tens, pl='amp')
 f_img <- f_img[[1]]
-f_img <- plot2D.zoom(arr = f_img, center = c(0,0), Del_X = 100, Del_Y = 100)
+f_img <- plot2D.zoom(arr = f_img, center = c(0,0), Del_X = 70, Del_Y = 70)
+
+###Take out the (0,0) spot
+f_img <- mask.arr.box(tens = f_img, box.vec = c(-1,-1,1,1))
 
 ###Determine the box co-ordinates for the 1st order spots
 vec1 <- c(17, -7.5, 28, 3.5, -28, -3.5, -17, 7.5)
@@ -12,12 +15,12 @@ vec2 <- c(5, 15, 16, 26, -16, -26, -5, -15)
 vec3 <- c(6.5, -25, 17.5, -14, -15, 15, -4, 26)
 box.mat <- matrix(data = c(vec1, vec2, vec3), ncol = 4, byrow = T)
 plot2D.arr(f_img)
-dmp <- plot2D.boxes(img.tens = f_img, box.mat = box.mat, box.thick = 0.01, box_intens = 0.05)
+dmp <- plot2D.boxes(img.tens = f_img, box.mat = box.mat, box.thick = 0, box_intens = 0.1)
 
 ###Determine the box co-ordinates for the (0,0) spot
 box.zer <- matrix(data = c(-2.5,-2.5,2.5,2.5), ncol = 4, byrow = T)
 plot2D.arr(f_img)
-dmp1 <- plot2D.boxes(img.tens = f_img, box.mat = box.zer, box.thick = 0.01, box_intens = 0.05)
+dmp1 <- plot2D.boxes(img.tens = f_img, box.mat = box.zer, box.thick = 0.01, box_intens = 0.1)
 k0.vec <- c(-2.5, -2.5, 2.5, 2.5)
 
 ###Determine the DelX and DelY for the fft_2D_map() function
