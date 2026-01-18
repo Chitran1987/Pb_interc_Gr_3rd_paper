@@ -38,3 +38,6 @@ dmp <- plot2D.boxes(img.tens = f.dmp, box.mat = b.mat, box.thick = 0.01, box_int
 
 ###Call the fft_2D_map() function
 map.img.500mV.Gr <- fft_2D_map(img.tens = img.500mV, DelX = 1, DelY = 1, k1st = b.mat, k0 = z.vec)
+
+###Save the fft_map
+save(map.img.500mV.Gr, file = 'FFT_map_Gr_STM_img_Jan24_14.08.14_2023_[6-3] _0.5V_100pA.rda')
